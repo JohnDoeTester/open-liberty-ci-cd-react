@@ -1,6 +1,6 @@
 // tag::copyright[]
 /*******************************************************************************
- * Copyright (c) 2017, 2022 IBM Corporation and others.
+ * Copyright (c) 2017, 2018 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
@@ -9,12 +9,23 @@
  * SPDX-License-Identifier: EPL-2.0
  *******************************************************************************/
 // end::copyright[]
-package io.openliberty.guides.rest;
+package io.openliberty.guides.inventory.model;
 
-import jakarta.ws.rs.core.Application;
-import jakarta.ws.rs.ApplicationPath;
+import java.util.List;
 
-@ApplicationPath("system")
-public class SystemApplication extends Application {
+public class InventoryList {
 
+  private List<SystemData> systems;
+
+  public InventoryList(List<SystemData> systems) {
+    this.systems = systems;
+  }
+
+  public List<SystemData> getSystems() {
+    return systems;
+  }
+
+  public int getTotal() {
+    return systems.size();
+  }
 }
