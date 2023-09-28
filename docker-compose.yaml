@@ -1,7 +1,7 @@
 version: "3.3"
 services: 
  openliberty:
-   image: openliberty:app:latest
+   image: johndoetester/openliberty:latest
    ports: 
      - 80:9080
 
