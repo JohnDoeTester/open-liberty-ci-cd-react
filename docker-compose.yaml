@@ -1,0 +1,7 @@
+version: "3.3"
+services: 
+ openliberty:
+   image: openliberty:app:latest
+   ports: 
+     - 80:9080
+
