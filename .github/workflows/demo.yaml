@@ -35,6 +35,7 @@ jobs:
         tags: johndoetester/openliberty:latest
   testing:
     runs-on: ubuntu-20.04
+    needs: build
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
