@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Open Liberty CI/CD on Java, Maven, Docker
 
 on:
   push:
