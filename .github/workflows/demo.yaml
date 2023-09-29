@@ -66,6 +66,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: testing
+    name: Deployment-on-Docker
     steps:
     - name: SSH Remote Commands
       uses: appleboy/ssh-action@v1.0.0
