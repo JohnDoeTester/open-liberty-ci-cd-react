@@ -31,21 +31,14 @@ jobs:
         context: .
         push: true
         tags: johndoetester/openliberty:latest
-  testing:
-    name: Testing
-    runs-on: ubuntu-20.04
-    needs: build
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
 
     - name: Build an image from Dockerfile
       run: |
-        docker build -t docker.io/johndoetester/openliberty:latest .
+        docker build -t docker.io/johndoetester/openliberty:${{ github.sha }} .
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
       with:
-        image-ref: 'docker.io/johndoetester/openliberty:latest'
+        image-ref: 'docker.io/johndoetester/openliberty:${{ github.sha }}'
         exit-code: '1'
         ignore-unfixed: true
         vuln-type: 'os,library'
